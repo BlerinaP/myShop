@@ -1,0 +1,28 @@
+.order-success{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+.order-success > h1{
+  font-size: 30px;
+  color: red;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.order-success > p{
+  font-size: 20px;
+}
+.order-success > p > span{
+  font-weight: bold;
+  color: red;
+}
+.order-success a {
+  background: red;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: unset;
+  font-weight: bold;
+  font-style: normal;
+  margin-top: 20px;
+}

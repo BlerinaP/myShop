@@ -1,0 +1,20 @@
+<div class="cart-holder">
+  <div class="cart-items">
+     <app-cart-item *ngFor="let product of products  | async" [product]="product"></app-cart-item>
+  </div>
+  <div class="cart-form">
+    <form action="" (ngSubmit)="orderSubmit()" #form="ngForm">
+      <label>Full name</label>
+      <input type="text" name="fullname" [(ngModel)]="name"  placeholder="(minimum 3 chars)" minlength="3" required #fullName="ngModel">
+      <label>Address</label>
+      <input type="text" name="addressName" [(ngModel)]="address" minlength="6" required placeholder="(minimum 6 chars)" #addressName="ngModel">
+      <label>Credit Card number</label>
+      <input type="text" name="cardNumber" [(ngModel)]="card"  placeholder="(16 digit number)" minlength="16" required #cardName="ngModel">
+      <span>We will never share your payment details with anyone else</span>
+      <button type="submit" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
+</div>
+<div class="total-container">
+  <span *ngIf="total | async"> Total: {{ (total | async) | currency: "EUR" }}</span>
+</div>

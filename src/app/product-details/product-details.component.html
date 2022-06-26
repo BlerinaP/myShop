@@ -1,0 +1,13 @@
+<div class="details-page-container">
+  <div class="details">
+    <div class="img-holder">
+      <img src="{{ product.url }}" alt="{{ product.name }}">
+    </div>
+  </div>
+  <div class="details">
+    <h3>{{ product.name }}</h3>
+    <span>${{ product.price }}</span>
+    <p> {{product.description }}</p>
+    <a  routerLink="/">Back to product list</a>
+  </div>
+</div>

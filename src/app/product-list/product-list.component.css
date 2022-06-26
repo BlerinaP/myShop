@@ -1,0 +1,12 @@
+.card-flex{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+.card{
+  flex-grow: 1;
+  width: 30%;
+  padding: 15px;
+}
+
+

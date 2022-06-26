@@ -1,0 +1,14 @@
+<div class="cart-item">
+  <div class="flex-container">
+    <div class="cart-item-details">
+      <img src="{{product.url}}" alt="{{product.name}}">
+    </div>
+    <div class="cart-item-details">
+      <h6>{{product.name}}</h6>
+      <span>${{product.price}}</span>
+      <label>Amount</label>
+      <input type="number" min="1" (input)="changeTotal($event)" [(ngModel)]="product.quantity">
+      <button (click)="removeItem($event)">Remove Item</button>
+    </div>
+  </div>
+</div>

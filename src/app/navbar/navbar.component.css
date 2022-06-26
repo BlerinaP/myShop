@@ -1,0 +1,38 @@
+.navbar{
+  margin: 0;
+  padding: 20px;
+  background-color: #cb89cbba;
+  text-align: center;
+}
+.navbar > h1{
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 13px;
+  text-transform: uppercase;
+}
+.navbar-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.navbar-li-item{
+  margin: 0 5px;
+  font-size: 20px;
+  font-weight: normal;
+}
+.navbar-li-item::before{
+  content: "|";
+  margin-right: 10px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.navbar-li-item:first-child::before{
+  content: unset;
+}
+.navbar-li-item > a{
+  text-decoration: none;
+  color: #fff;
+}
