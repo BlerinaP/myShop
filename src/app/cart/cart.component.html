@@ -4,14 +4,23 @@
   </div>
   <div class="cart-form">
     <form action="" (ngSubmit)="orderSubmit()" #form="ngForm">
-      <label>Full name</label>
-      <input type="text" name="fullname" [(ngModel)]="name"  placeholder="(minimum 3 chars)" minlength="3" required #fullName="ngModel">
-      <label>Address</label>
-      <input type="text" name="addressName" [(ngModel)]="address" minlength="6" required placeholder="(minimum 6 chars)" #addressName="ngModel">
-      <label>Credit Card number</label>
-      <input type="text" name="cardNumber" [(ngModel)]="card"  placeholder="(16 digit number)" minlength="16" required #cardName="ngModel">
+      <div class="elements">
+        <label>Full name</label>
+        <input type="text"  onkeydown="return /[a-z]/i.test(event.key)" name="fullname" [(ngModel)]="name" (ngModelChange) = "changedInputName($event)"  placeholder="(minimum 3 chars)" minlength="3" required #fullName="ngModel">
+        <span *ngIf="submitted && name.length<3">You need to provide minimum three chars</span>
+      </div>
+      <div class="elements">
+        <label>Address</label>
+        <input type="text" name="addressName" [(ngModel)]="address" minlength="6" (ngModelChange) = "changedInputAddress($event)"  required placeholder="(minimum 6 chars)" #addressName="ngModel">
+        <span *ngIf="submitted && address.length < 6">You need to provide minimum 6 chars</span>
+      </div>
+      <div class="elements">
+        <label>Credit Card number</label>
+        <input type="number" name="cardNumber" [(ngModel)]="card" (ngModelChange) = "changedInputCart($event)"   placeholder="(16 digit number)" minlength="16" required #cardName="ngModel">
+        <span *ngIf="submitted  && card.length < 16">You need to provide minimum 16 chars</span>
+      </div>
       <span>We will never share your payment details with anyone else</span>
-      <button type="submit" [disabled]="form.invalid">Submit</button>
+      <button type="submit">Submit</button>
     </form>
   </div>
 </div>

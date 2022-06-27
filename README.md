@@ -3,7 +3,14 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 Run npm install to install all depedencies
 
-This project is shopping website which includes an page for productList, product details and cart;
+## Description
+This project is a shopping website.
+In the first page you have a product list, products are fetched through an api.
+Each product have a details page where we show the name, description and an image of the product.
+You can Add products to the cart, one ore multiple. Also you can remove products from the cart.
+Cart includes a form which asks to provide name, card number and address.
+After finishing order you will have an success message shown.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

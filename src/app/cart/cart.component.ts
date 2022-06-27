@@ -19,6 +19,7 @@ export class CartComponent implements OnInit {
   order: Order = new Order();
   products: Observable<Product[]> = new Observable<Product[]>();
   total: Observable<number> = new Observable<number>();
+  submitted: boolean = false;
 
   constructor( private cart: CartService, private router: Router) {}
 
@@ -26,10 +27,20 @@ export class CartComponent implements OnInit {
     this.products = this.cart.allProducts
     this.total = this.cart.total;
   }
+  changedInputName(arg: string){
+    this.name = arg
+  }
+  changedInputAddress(arg: string){
+    this.address = arg
+  }
+  changedInputCart(arg: string){
+    this.card = arg
+  }
   orderSubmit(): void{
-    // if(this.name == '' || this.address == '' || this.card == ''){
-    //   return
-    // }
+    if(this.name == '' || this.address == '' || this.card == ''){
+      this.submitted = true
+      return
+    }
     this.user.name = this.name
     this.user.address = this.address
     this.user.card = this.card
