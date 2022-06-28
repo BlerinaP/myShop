@@ -6,7 +6,7 @@
     <form action="" (ngSubmit)="orderSubmit()" #form="ngForm">
       <div class="elements">
         <label>Full name</label>
-        <input type="text"  onkeydown="return /[a-z]/i.test(event.key)" name="fullname" [(ngModel)]="name" (ngModelChange) = "changedInputName($event)"  placeholder="(minimum 3 chars)" minlength="3" required #fullName="ngModel">
+        <input type="text"  onkeydown="return /[a-z, ]/i.test(event.key)" name="fullname" [(ngModel)]="name" (ngModelChange) = "changedInputName($event)"  placeholder="(minimum 3 chars)" minlength="3" required #fullName="ngModel">
         <span *ngIf="submitted && name.length<3">You need to provide minimum three chars</span>
       </div>
       <div class="elements">
@@ -16,7 +16,7 @@
       </div>
       <div class="elements">
         <label>Credit Card number</label>
-        <input type="number" name="cardNumber" [(ngModel)]="card" (ngModelChange) = "changedInputCart($event)"   placeholder="(16 digit number)" minlength="16" required #cardName="ngModel">
+        <input type="number" pattern="[0-9]*" name="cardNumber" [(ngModel)]="card" (ngModelChange) = "changedInputCart($event)"   placeholder="(16 digit number)" minlength="16" required #cardName="ngModel">
         <span *ngIf="submitted  && card.length < 16">You need to provide minimum 16 chars</span>
       </div>
       <span>We will never share your payment details with anyone else</span>
